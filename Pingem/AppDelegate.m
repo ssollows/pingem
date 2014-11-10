@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Propound.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <Parse/Parse.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Propound registerSubclass];
+    [GMSServices provideAPIKey:@"AIzaSyBI0pj_2nG8ePN1WGQwtuU-F02L1fYwIJw"];
+    [Parse setApplicationId:@"0d8mI1FZYTsm0QHXvWq9EPW43F2Te2l09Jx1mdaZ" clientKey:@"HzFV7wyCvitvPXBynvzKvuXtGPO5To8PC3NMwrg0"];
+    [PFUser enableAutomaticUser];
+    
+    PFUser* user = [PFUser currentUser];
+    [user incrementKey:@"RunCount"];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    }];
     return YES;
 }
 

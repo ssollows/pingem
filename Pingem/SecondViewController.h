@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface SecondViewController : UIViewController
-
-
+@property CLLocation* location;
 @end
 
