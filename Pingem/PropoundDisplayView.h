@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Propound.h"
 
-@interface PropoundDisplayView : UIView
+@interface PropoundDisplayView : UIView<UIGestureRecognizerDelegate>
 -(void)populateWithPropound:(Propound*)propound;
 @end

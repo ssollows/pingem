@@ -56,11 +56,47 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="What did you see you liked" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6a-nn-uko">
-                            <rect key="frame" x="8" y="126" width="264" height="243"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="706-R4-uZ9">
+                            <rect key="frame" x="199" y="348" width="34" height="30"/>
+                            <state key="normal" title="reply">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="handleReplyButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="5bh-db-gfJ"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-8O-tqk" userLabel="reply view">
+                            <rect key="frame" x="8" y="261" width="264" height="151"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reply:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7j-Vs-iCo">
+                                    <rect key="frame" x="8" y="3" width="49" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwU-lN-f0I">
+                                    <rect key="frame" x="201" y="-1" width="55" height="30"/>
+                                    <state key="normal" title="Send">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="handleSendButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="u64-NW-MVE"/>
+                                    </connections>
+                                </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzz-Co-UpR">
+                                    <rect key="frame" x="8" y="38" width="248" height="83"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agc-ul-ZLj">
@@ -82,6 +118,8 @@
                 <outlet property="descriptionText" destination="a6a-nn-uko" id="Web-g9-DZR"/>
                 <outlet property="genderLabel" destination="4mG-HK-IM8" id="cch-fs-h9C"/>
                 <outlet property="nameLabel" destination="aaE-jS-pQR" id="haR-xk-m7m"/>
+                <outlet property="replyText" destination="kzz-Co-UpR" id="BaW-zm-8cm"/>
+                <outlet property="replyView" destination="7xB-8O-tqk" id="luP-nm-JMY"/>
                 <outlet property="scrollview" destination="8ve-23-8Ba" id="Q7Q-gO-fYN"/>
             </connections>
             <point key="canvasLocation" x="308" y="253"/>
