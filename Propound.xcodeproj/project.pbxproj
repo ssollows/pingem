@@ -12,6 +12,8 @@
 		D226E5A91A1073FB0025D65D /* Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = D226E5A81A1073FB0025D65D /* Marker.m */; };
 		D226E5AB1A1074C80025D65D /* PropoundDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D226E5AA1A1074C80025D65D /* PropoundDisplayView.xib */; };
 		D226E5AE1A1074E40025D65D /* PropoundDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D226E5AD1A1074E40025D65D /* PropoundDisplayView.m */; };
+		D29B7E6D1A112A2C00ABA9A6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29B7E6C1A112A2C00ABA9A6 /* SettingsViewController.m */; };
+		D29B7E701A112B3400ABA9A6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D29B7E6F1A112B3400ABA9A6 /* User.m */; };
 		D2C0167F1A1031A800A1C3A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C0167E1A1031A800A1C3A5 /* main.m */; };
 		D2C016821A1031A800A1C3A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016811A1031A800A1C3A5 /* AppDelegate.m */; };
 		D2C016851A1031A800A1C3A5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016841A1031A800A1C3A5 /* FirstViewController.m */; };
@@ -45,6 +47,10 @@
 		D226E5AA1A1074C80025D65D /* PropoundDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropoundDisplayView.xib; sourceTree = "<group>"; };
 		D226E5AC1A1074E40025D65D /* PropoundDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropoundDisplayView.h; sourceTree = "<group>"; };
 		D226E5AD1A1074E40025D65D /* PropoundDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropoundDisplayView.m; sourceTree = "<group>"; };
+		D29B7E6B1A112A2C00ABA9A6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D29B7E6C1A112A2C00ABA9A6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D29B7E6E1A112B3400ABA9A6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D29B7E6F1A112B3400ABA9A6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		D2C016791A1031A700A1C3A5 /* Propound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Propound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C0167D1A1031A800A1C3A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C0167E1A1031A800A1C3A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 			children = (
 				D226E5801A1048C60025D65D /* Propound.h */,
 				D226E5811A1048C60025D65D /* Propound.m */,
+				D29B7E6E1A112B3400ABA9A6 /* User.h */,
+				D29B7E6F1A112B3400ABA9A6 /* User.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -121,6 +129,8 @@
 				D226E5A81A1073FB0025D65D /* Marker.m */,
 				D226E5AC1A1074E40025D65D /* PropoundDisplayView.h */,
 				D226E5AD1A1074E40025D65D /* PropoundDisplayView.m */,
+				D29B7E6B1A112A2C00ABA9A6 /* SettingsViewController.h */,
+				D29B7E6C1A112A2C00ABA9A6 /* SettingsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -331,9 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29B7E701A112B3400ABA9A6 /* User.m in Sources */,
 				D226E5AE1A1074E40025D65D /* PropoundDisplayView.m in Sources */,
 				D226E5821A1048C60025D65D /* Propound.m in Sources */,
 				D2C016881A1031A800A1C3A5 /* SecondViewController.m in Sources */,
+				D29B7E6D1A112A2C00ABA9A6 /* SettingsViewController.m in Sources */,
 				D226E5A21A1052FF0025D65D /* NavigationController.m in Sources */,
 				D2C016821A1031A800A1C3A5 /* AppDelegate.m in Sources */,
 				D2C016851A1031A800A1C3A5 /* FirstViewController.m in Sources */,

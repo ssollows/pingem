@@ -19,7 +19,6 @@
 - (IBAction)handleReplyButton:(id)sender;
 - (IBAction)closeButton:(id)sender;
 - (IBAction)handleSendButton:(id)sender;
-
 @end
 @implementation PropoundDisplayView
 
@@ -37,6 +36,7 @@
     self.nameLabel.text = propound.name;
     self.genderLabel.text = propound.gender;
     self.ageLabel.text = propound.age;
+
     self.descriptionText.text = propound.descriptionText;
 }
 /*
@@ -62,20 +62,10 @@
 
 -(void)tapReceived:(UITapGestureRecognizer *)tapGestureRecognizer
 {
-    NSLog(@"in here");
     if ([self.replyText isFirstResponder] && [tapGestureRecognizer view] != self.replyText) {
         [self.replyText resignFirstResponder];
     }
 
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"in here");
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([self.replyText isFirstResponder] && [touch view] != self.replyText) {
-        [self.replyText resignFirstResponder];
-    }
-    [super touchesBegan:touches withEvent:event];
 }
 
 

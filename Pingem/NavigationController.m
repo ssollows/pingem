@@ -9,11 +9,13 @@
 #import "NavigationController.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "SettingsViewController.h"
 #import "Propound.h"
 #import <Parse/Parse.h>
 
 @interface NavigationController ()
 @property (strong) CLLocationManager *locationManager;
+@property (strong, nonatomic) User* user;
 @end
 
 @implementation NavigationController
@@ -31,6 +33,8 @@
         [self.locationManager requestAlwaysAuthorization];
         [self.locationManager startUpdatingLocation];
     }
+    
+    self.user = (User*)[PFUser currentUser];
 }
 
 -(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
@@ -42,7 +46,12 @@
     } else if ([viewController isKindOfClass:[FirstViewController class]]){
         FirstViewController* vc = (FirstViewController*)viewController;
         vc.location = [self.locationManager location];
+    } else if ([viewController isKindOfClass:[SettingsViewController class]]){
+        SettingsViewController* vc = (SettingsViewController*)viewController;
+        vc.user = self.user;
+        [vc populateSettings];
     }
+
     
 }
 
