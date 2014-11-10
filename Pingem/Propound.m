@@ -10,7 +10,7 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation Propound
-@dynamic description;
+@dynamic descriptionText;
 @dynamic name;
 @dynamic age;
 @dynamic gender;

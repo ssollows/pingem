@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D226E5821A1048C60025D65D /* Propound.m in Sources */ = {isa = PBXBuildFile; fileRef = D226E5811A1048C60025D65D /* Propound.m */; };
 		D226E5A21A1052FF0025D65D /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D226E5A11A1052FF0025D65D /* NavigationController.m */; };
+		D226E5A91A1073FB0025D65D /* Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = D226E5A81A1073FB0025D65D /* Marker.m */; };
+		D226E5AB1A1074C80025D65D /* PropoundDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D226E5AA1A1074C80025D65D /* PropoundDisplayView.xib */; };
+		D226E5AE1A1074E40025D65D /* PropoundDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D226E5AD1A1074E40025D65D /* PropoundDisplayView.m */; };
 		D2C0167F1A1031A800A1C3A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C0167E1A1031A800A1C3A5 /* main.m */; };
 		D2C016821A1031A800A1C3A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016811A1031A800A1C3A5 /* AppDelegate.m */; };
 		D2C016851A1031A800A1C3A5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016841A1031A800A1C3A5 /* FirstViewController.m */; };
@@ -37,6 +40,11 @@
 		D226E5811A1048C60025D65D /* Propound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Propound.m; sourceTree = "<group>"; };
 		D226E5A01A1052FF0025D65D /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		D226E5A11A1052FF0025D65D /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		D226E5A71A1073FB0025D65D /* Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marker.h; sourceTree = "<group>"; };
+		D226E5A81A1073FB0025D65D /* Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marker.m; sourceTree = "<group>"; };
+		D226E5AA1A1074C80025D65D /* PropoundDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropoundDisplayView.xib; sourceTree = "<group>"; };
+		D226E5AC1A1074E40025D65D /* PropoundDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropoundDisplayView.h; sourceTree = "<group>"; };
+		D226E5AD1A1074E40025D65D /* PropoundDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropoundDisplayView.m; sourceTree = "<group>"; };
 		D2C016791A1031A700A1C3A5 /* Propound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Propound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C0167D1A1031A800A1C3A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C0167E1A1031A800A1C3A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,8 +117,21 @@
 				D2C016871A1031A800A1C3A5 /* SecondViewController.m */,
 				D226E5A01A1052FF0025D65D /* NavigationController.h */,
 				D226E5A11A1052FF0025D65D /* NavigationController.m */,
+				D226E5A71A1073FB0025D65D /* Marker.h */,
+				D226E5A81A1073FB0025D65D /* Marker.m */,
+				D226E5AC1A1074E40025D65D /* PropoundDisplayView.h */,
+				D226E5AD1A1074E40025D65D /* PropoundDisplayView.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		D226E5A31A1073D50025D65D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D2C016891A1031A800A1C3A5 /* Main.storyboard */,
+				D226E5AA1A1074C80025D65D /* PropoundDisplayView.xib */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 		D2C016701A1031A700A1C3A5 = {
@@ -136,11 +157,11 @@
 		D2C0167B1A1031A700A1C3A5 /* Pingem */ = {
 			isa = PBXGroup;
 			children = (
+				D226E5A31A1073D50025D65D /* views */,
 				D226E57D1A1047230025D65D /* models */,
 				D2C016801A1031A800A1C3A5 /* AppDelegate.h */,
 				D2C016811A1031A800A1C3A5 /* AppDelegate.m */,
 				D226E57F1A10473C0025D65D /* controllers */,
-				D2C016891A1031A800A1C3A5 /* Main.storyboard */,
 				D2C0168C1A1031A800A1C3A5 /* Images.xcassets */,
 				D2C0168E1A1031A800A1C3A5 /* LaunchScreen.xib */,
 				D2C0167C1A1031A700A1C3A5 /* Supporting Files */,
@@ -256,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D226E5AB1A1074C80025D65D /* PropoundDisplayView.xib in Resources */,
 				D2C0168B1A1031A800A1C3A5 /* Main.storyboard in Resources */,
 				D2C016901A1031A800A1C3A5 /* LaunchScreen.xib in Resources */,
 				D2C0168D1A1031A800A1C3A5 /* Images.xcassets in Resources */,
@@ -309,12 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D226E5AE1A1074E40025D65D /* PropoundDisplayView.m in Sources */,
 				D226E5821A1048C60025D65D /* Propound.m in Sources */,
 				D2C016881A1031A800A1C3A5 /* SecondViewController.m in Sources */,
 				D226E5A21A1052FF0025D65D /* NavigationController.m in Sources */,
 				D2C016821A1031A800A1C3A5 /* AppDelegate.m in Sources */,
 				D2C016851A1031A800A1C3A5 /* FirstViewController.m in Sources */,
 				D2C0167F1A1031A800A1C3A5 /* main.m in Sources */,
+				D226E5A91A1073FB0025D65D /* Marker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface FirstViewController : UIViewController<CLLocationManagerDelegate>
+@interface FirstViewController : UIViewController<CLLocationManagerDelegate, GMSMapViewDelegate>
 @property CLLocation* location;
+@property NSArray *propounds;
 
 @end
 

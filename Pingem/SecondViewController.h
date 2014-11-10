@@ -11,5 +11,6 @@
 
 @interface SecondViewController : UIViewController
 @property CLLocation* location;
+@property UITabBarController *tabBarController;
 @end
 

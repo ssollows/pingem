@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface Propound : PFObject<PFSubclassing>
-@property NSString *description;
+@property NSString *descriptionText;
 @property NSString *name;
 @property NSString *age;
 @property NSString *gender;

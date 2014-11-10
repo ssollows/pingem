@@ -10,5 +10,5 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface NavigationController : UITabBarController<UITabBarDelegate,UITabBarControllerDelegate,CLLocationManagerDelegate>
-
+@property NSMutableArray* propounds;
 @end
