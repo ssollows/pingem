@@ -24,12 +24,21 @@
     self.user = (User*)[PFUser currentUser];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self populateSettings];
+}
+
 - (IBAction)handleSaveButton:(id)sender {
     self.user.name = self.nameText.text ? self.nameText.text : @"";
     self.user.age = self.ageText.text ? self.ageText.text : @"";
     self.user.gender = self.genderSegment.selectedSegmentIndex == 0 ? @"male" : @"female";
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"this is it!");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Saved!"
+                                                        message:@"Save Successful."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }];
 }
 
