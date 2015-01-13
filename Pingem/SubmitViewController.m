@@ -1,16 +1,16 @@
 //
-//  SecondViewController.m
+//  SubmitViewController.m
 //  Pingem
 //
 //  Created by Scott Sollows on 2014-11-09.
 //  Copyright (c) 2014 Scott Sollows. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SubmitViewController.h"
 #import "Propound.h"
 #import <Parse/Parse.h>
 
-@interface SecondViewController ()
+@interface SubmitViewController ()
 - (IBAction)handleSubmitButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionText;
 @property (weak, nonatomic) IBOutlet UITextField *ageText;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation SecondViewController
+@implementation SubmitViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

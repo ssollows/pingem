@@ -16,8 +16,8 @@
 		D29B7E701A112B3400ABA9A6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D29B7E6F1A112B3400ABA9A6 /* User.m */; };
 		D2C0167F1A1031A800A1C3A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C0167E1A1031A800A1C3A5 /* main.m */; };
 		D2C016821A1031A800A1C3A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016811A1031A800A1C3A5 /* AppDelegate.m */; };
-		D2C016851A1031A800A1C3A5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016841A1031A800A1C3A5 /* FirstViewController.m */; };
-		D2C016881A1031A800A1C3A5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016871A1031A800A1C3A5 /* SecondViewController.m */; };
+		D2C016851A1031A800A1C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016841A1031A800A1C3A5 /* MapViewController.m */; };
+		D2C016881A1031A800A1C3A5 /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C016871A1031A800A1C3A5 /* SubmitViewController.m */; };
 		D2C0168B1A1031A800A1C3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C016891A1031A800A1C3A5 /* Main.storyboard */; };
 		D2C0168D1A1031A800A1C3A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C0168C1A1031A800A1C3A5 /* Images.xcassets */; };
 		D2C016901A1031A800A1C3A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C0168E1A1031A800A1C3A5 /* LaunchScreen.xib */; };
@@ -56,10 +56,10 @@
 		D2C0167E1A1031A800A1C3A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2C016801A1031A800A1C3A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2C016811A1031A800A1C3A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2C016831A1031A800A1C3A5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		D2C016841A1031A800A1C3A5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		D2C016861A1031A800A1C3A5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		D2C016871A1031A800A1C3A5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		D2C016831A1031A800A1C3A5 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D2C016841A1031A800A1C3A5 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D2C016861A1031A800A1C3A5 /* SubmitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubmitViewController.h; sourceTree = "<group>"; };
+		D2C016871A1031A800A1C3A5 /* SubmitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubmitViewController.m; sourceTree = "<group>"; };
 		D2C0168A1A1031A800A1C3A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2C0168C1A1031A800A1C3A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2C0168F1A1031A800A1C3A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -119,10 +119,10 @@
 		D226E57F1A10473C0025D65D /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2C016831A1031A800A1C3A5 /* FirstViewController.h */,
-				D2C016841A1031A800A1C3A5 /* FirstViewController.m */,
-				D2C016861A1031A800A1C3A5 /* SecondViewController.h */,
-				D2C016871A1031A800A1C3A5 /* SecondViewController.m */,
+				D2C016831A1031A800A1C3A5 /* MapViewController.h */,
+				D2C016841A1031A800A1C3A5 /* MapViewController.m */,
+				D2C016861A1031A800A1C3A5 /* SubmitViewController.h */,
+				D2C016871A1031A800A1C3A5 /* SubmitViewController.m */,
 				D226E5A01A1052FF0025D65D /* NavigationController.h */,
 				D226E5A11A1052FF0025D65D /* NavigationController.m */,
 				D226E5A71A1073FB0025D65D /* Marker.h */,
@@ -344,11 +344,11 @@
 				D29B7E701A112B3400ABA9A6 /* User.m in Sources */,
 				D226E5AE1A1074E40025D65D /* PropoundDisplayView.m in Sources */,
 				D226E5821A1048C60025D65D /* Propound.m in Sources */,
-				D2C016881A1031A800A1C3A5 /* SecondViewController.m in Sources */,
+				D2C016881A1031A800A1C3A5 /* SubmitViewController.m in Sources */,
 				D29B7E6D1A112A2C00ABA9A6 /* SettingsViewController.m in Sources */,
 				D226E5A21A1052FF0025D65D /* NavigationController.m in Sources */,
 				D2C016821A1031A800A1C3A5 /* AppDelegate.m in Sources */,
-				D2C016851A1031A800A1C3A5 /* FirstViewController.m in Sources */,
+				D2C016851A1031A800A1C3A5 /* MapViewController.m in Sources */,
 				D2C0167F1A1031A800A1C3A5 /* main.m in Sources */,
 				D226E5A91A1073FB0025D65D /* Marker.m in Sources */,
 			);

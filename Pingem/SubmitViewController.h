@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SubmitViewController.h
 //  Pingem
 //
 //  Created by Scott Sollows on 2014-11-09.
@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <GoogleMaps/GoogleMaps.h>
 
-@interface FirstViewController : UIViewController<CLLocationManagerDelegate, GMSMapViewDelegate>
+@interface SubmitViewController : UIViewController
 @property CLLocation* location;
-@property NSArray *propounds;
-
+@property UITabBarController *tabBarController;
 @end
 

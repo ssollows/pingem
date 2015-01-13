@@ -7,8 +7,8 @@
 //
 
 #import "NavigationController.h"
-#import "FirstViewController.h"
-#import "SecondViewController.h"
+#import "MapViewController.h"
+#import "SubmitViewController.h"
 #import "SettingsViewController.h"
 #import "Propound.h"
 #import <Parse/Parse.h>
@@ -16,35 +16,26 @@
 @interface NavigationController ()
 @property (strong) CLLocationManager *locationManager;
 @property (strong, nonatomic) User* user;
+@property CLLocation* location;
+
 @end
 
 @implementation NavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.delegate = self;
-    
-    if(self.locationManager == nil){
-        self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locationManager.distanceFilter = kCLDistanceFilterNone;
-        [self.locationManager requestAlwaysAuthorization];
-        [self.locationManager startUpdatingLocation];
-    }
-    
     self.user = (User*)[PFUser currentUser];
 }
 
 -(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    if([viewController isKindOfClass:[SecondViewController class]]){
-        SecondViewController* vc = (SecondViewController*)viewController;
-        vc.location = [self.locationManager location];
+    if([viewController isKindOfClass:[SubmitViewController class]]){
+        SubmitViewController* vc = (SubmitViewController*)viewController;
+        vc.location = self.location;
         vc.tabBarController = self;
-    } else if ([viewController isKindOfClass:[FirstViewController class]]){
-        FirstViewController* vc = (FirstViewController*)viewController;
+    } else if ([viewController isKindOfClass:[MapViewController class]]){
+        MapViewController* vc = (MapViewController*)viewController;
+        self.locationManager.delegate = vc;
         vc.location = [self.locationManager location];
     } else if ([viewController isKindOfClass:[SettingsViewController class]]){
         SettingsViewController* vc = (SettingsViewController*)viewController;
@@ -53,17 +44,6 @@
     }
 
     
-}
-
-// Delegate method from the CLLocationManagerDelegate protocol.
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations {
-    CLLocation* location = [locations lastObject];
-    NSDate* eventDate = location.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
-        // If the event is recent, do something with it.
-    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  MapViewController.h
 //  Pingem
 //
 //  Created by Scott Sollows on 2014-11-09.
@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface SecondViewController : UIViewController
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, GMSMapViewDelegate>
 @property CLLocation* location;
-@property UITabBarController *tabBarController;
+@property NSArray *propounds;
+
 @end
 

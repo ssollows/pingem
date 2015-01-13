@@ -1,51 +1,74 @@
 //
-//  FirstViewController.m
+//  MapViewController.m
 //  Pingem
 //
 //  Created by Scott Sollows on 2014-11-09.
 //  Copyright (c) 2014 Scott Sollows. All rights reserved.
 //
-#import "FirstViewController.h"
+#import "MapViewController.h"
 #import "Marker.h"
 #import "Propound.h"
 #import "PropoundDisplayView.h"
 
-@interface FirstViewController ()
+@interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UIView *mapViewContainer;
+@property (strong, nonatomic) NSMutableArray *markerArray;
 @property (strong, nonatomic) GMSMapView *googleMapView;
+@property (strong) CLLocationManager *locationManager;
 @property PropoundDisplayView* currentPropoundView;
+
 @end
 
-@implementation FirstViewController
+@implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if(self.locationManager == nil){
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = kCLDistanceFilterNone;
+        [self.locationManager requestAlwaysAuthorization];
+        self.location = [self.locationManager location];
+    }
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:49.890
+                                                            longitude:-119.48
+                                                                 zoom:15];
+    self.markerArray = [[NSMutableArray alloc]init];
+    self.googleMapView = [GMSMapView mapWithFrame:self.mapViewContainer.frame camera:nil];
+    self.googleMapView.delegate = self;
+    self.googleMapView.camera = camera;
+
+    [self.mapViewContainer addSubview:self.googleMapView];
+    [self.googleMapView setMinZoom:15 maxZoom:22];
+
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+}
+
 -(void)viewDidAppear:(BOOL)animated{
-    [[self.mapViewContainer subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.location.coordinate.latitude
-                                                            longitude:self.location.coordinate.longitude
-                                                                 zoom:15];
-
-    NSLog(@"self.location.coordinate.longitude %f",self.view.bounds.size.width);
-    
-    self.googleMapView = [GMSMapView mapWithFrame:self.mapViewContainer.frame camera:camera];
+    [self resetMarkers];
+    [self getCurrentPropounds];
     Marker *marker = [[Marker alloc] init];
-
-    self.googleMapView.delegate = self;
-    
-    marker.position = self.location.coordinate;
+    marker.position = CLLocationCoordinate2DMake(49.890, -119.48);
     marker.snippet = @"You";
     marker.appearAnimation = kGMSMarkerAnimationPop;
     marker.map = self.googleMapView;
     marker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
-    
-    [self.googleMapView setMinZoom:15 maxZoom:22];
-    [self.mapViewContainer addSubview:self.googleMapView];
-    
-    
+    [self.markerArray addObject:marker];
+}
+
+-(void)resetMarkers{
+    for(Marker* marker in self.markerArray){
+        marker.map = nil;
+    }
+    [self.markerArray removeAllObjects];
+}
+
+-(void)getCurrentPropounds{
     PFQuery *query = [PFQuery queryWithClassName:@"Propound"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -65,16 +88,16 @@
                 marker.appearAnimation = kGMSMarkerAnimationPop;
                 marker.map = self.googleMapView;
                 marker.propound = propound;
+                NSLog(@"add");
+                [self.markerArray addObject:marker];
             }
-
+            
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-
 }
-
 
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(Marker*)marker {
     if(marker.propound) {
