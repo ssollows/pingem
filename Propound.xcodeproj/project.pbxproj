@@ -519,7 +519,7 @@
 				INFOPLIST_FILE = PingemTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = PropoundTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pingem.app/Pingem";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Propound.app/Propound";
 			};
 			name = Debug;
 		};
@@ -534,7 +534,7 @@
 				INFOPLIST_FILE = PingemTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = PropoundTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pingem.app/Pingem";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Propound.app/Propound";
 			};
 			name = Release;
 		};
