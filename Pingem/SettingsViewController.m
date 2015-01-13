@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UITextField *ageText;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegment;
+@property (strong, nonatomic) User* user;
 - (IBAction)handleSaveButton:(id)sender;
 
 @end
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.user = (User*)[PFUser currentUser];
 }
 
 - (IBAction)handleSaveButton:(id)sender {

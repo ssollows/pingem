@@ -13,6 +13,7 @@
 @interface MapViewController : UIViewController<CLLocationManagerDelegate, GMSMapViewDelegate>
 @property CLLocation* location;
 @property NSArray *propounds;
+@property (strong) CLLocationManager *locationManager;
 
 @end
 

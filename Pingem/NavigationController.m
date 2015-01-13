@@ -16,7 +16,6 @@
 @interface NavigationController ()
 @property (strong) CLLocationManager *locationManager;
 @property (strong, nonatomic) User* user;
-@property CLLocation* location;
 
 @end
 
@@ -25,24 +24,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.user = (User*)[PFUser currentUser];
+    
+    if(self.locationManager == nil){
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = kCLDistanceFilterNone;
+        [self.locationManager requestAlwaysAuthorization];
+        MapViewController* mapVC = (MapViewController*)[self.navigationController visibleViewController];
+        mapVC.locationManager = self.locationManager;
+    }
 }
 
 -(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
     if([viewController isKindOfClass:[SubmitViewController class]]){
         SubmitViewController* vc = (SubmitViewController*)viewController;
-        vc.location = self.location;
-        vc.tabBarController = self;
-    } else if ([viewController isKindOfClass:[MapViewController class]]){
-        MapViewController* vc = (MapViewController*)viewController;
-        self.locationManager.delegate = vc;
         vc.location = [self.locationManager location];
-    } else if ([viewController isKindOfClass:[SettingsViewController class]]){
-        SettingsViewController* vc = (SettingsViewController*)viewController;
-        vc.user = self.user;
-        [vc populateSettings];
     }
-
     
 }
 

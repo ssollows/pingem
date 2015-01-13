@@ -10,6 +10,5 @@
 #import "User.h"
 
 @interface SettingsViewController : UIViewController
-@property (strong, nonatomic) User* user;
 -(void)populateSettings;
 @end

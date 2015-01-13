@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIView *mapViewContainer;
 @property (strong, nonatomic) NSMutableArray *markerArray;
 @property (strong, nonatomic) GMSMapView *googleMapView;
-@property (strong) CLLocationManager *locationManager;
 @property PropoundDisplayView* currentPropoundView;
 
 @end
@@ -23,15 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.locationManager.delegate = self;
+    self.location = [self.locationManager location];
     
-    if(self.locationManager == nil){
-        self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locationManager.distanceFilter = kCLDistanceFilterNone;
-        [self.locationManager requestAlwaysAuthorization];
-        self.location = [self.locationManager location];
-    }
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:49.890
                                                             longitude:-119.48
                                                                  zoom:15];
